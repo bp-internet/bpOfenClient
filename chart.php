@@ -46,7 +46,7 @@ chart.getImageURI() + '">Printable version</a>';
 	  }
 	  
 	  function setRefreshTimer() {
-		refreshTimer = prompt("Zeit in Sekunden ("+refreshTimer+"):");
+		refreshTimer = parseInt(prompt("Zeit in Sekunden ("+refreshTimer+"):"));
 	  }
 	  
 	  function log(msg){
