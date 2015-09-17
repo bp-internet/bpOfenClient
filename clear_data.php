@@ -5,4 +5,4 @@ echo "ok";
 
 ?>
 <br>
-<a href="chart2.php">zum Chart</a>
+<a href="chart.php">zum Chart</a>
