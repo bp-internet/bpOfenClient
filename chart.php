@@ -9,6 +9,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	var data;
 	var options;
 	var chart;
+	var refreshTimer = 15;
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
@@ -26,7 +27,7 @@ chart.getImageURI() + '">Printable version</a>';
       }
 	  
 	  $(function(){
-		setTimeout(requestNewData, 1000);
+		setTimeout(requestNewData, 500);
 	  });
 	  
 	  function requestNewData() {
@@ -36,7 +37,7 @@ chart.getImageURI() + '">Printable version</a>';
 		  url: "temp.php",
 		}).done(function(e) {
 		  addData(eval(e));
-		  setTimeout(requestNewData, 1000);
+		  setTimeout(requestNewData, refreshTimer*1000);
 		});
 	  }
 	  
@@ -44,6 +45,10 @@ chart.getImageURI() + '">Printable version</a>';
 		temp_data.push(new_data);
 		data = google.visualization.arrayToDataTable(temp_data);
 		chart.draw(data, options);
+	  }
+	  
+	  function setRefreshTimer() {
+		refreshTimer = prompt("Zeit in Sekunden ("+refreshTimer+"):");
 	  }
 	  
 	  function log(msg){
@@ -55,4 +60,6 @@ chart.getImageURI() + '">Printable version</a>';
   <body>
     <div id="chart_div" style="width: 100%; height: 500px;"></div>
   <div id='png'></div>
+  <a href="clear_data.php" onclick="return alert('Sicher?')">Daten löschen</a>
+  <a href="" onclick="">TimeOut</a>
   </body> </html>
