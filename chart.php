@@ -57,7 +57,7 @@ chart.getImageURI() + '">Printable version</a>';
   </head>
   <body>
     <div id="chart_div" style="width: 100%; height: 500px;"></div>
-  <div id='png'></div>
-  <a href="clear_data.php" onclick="return alert('Sicher?')">Daten l&ouml;schen</a>
-  <a href="" onclick="setRefreshTimer()">TimeOut</a>
+  <div id='png'></div><br>
+  <a href="clear_data.php" onclick="return alert('Sicher?')">Daten l&ouml;schen</a><br>
+  <a href="#" onclick="setRefreshTimer()">TimeOut</a>
   </body> </html>
