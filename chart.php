@@ -5,7 +5,7 @@ src="https://www.google.com/jsapi"></script>
 	<script 
 src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
-	var temp_data = [['Uhrzeit', 'Temp 1', 'Temp 2'],<?php include("temp-data"); ?>];
+	var temp_data = [['Uhrzeit', 'Hinten', 'Vorne'],<?php include("temp-data"); ?>];
 	var data;
 	var options;
 	var chart;
