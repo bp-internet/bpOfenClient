@@ -3,7 +3,8 @@ $data = array();
 $time = date("H:i:s");
 $data[] = $time;
 
-$temp_seite = '{"temp1":'.rand(100,400).',"temp2":'.rand(100,400).'}';//file_get_contents("192.168.1.7/json");
+//$temp_seite = '{"temp1":'.rand(100,400).',"temp2":'.rand(100,400).'}';
+$temp_seite = file_get_contents("http://192.168.1.7/json");
 $json = json_decode($temp_seite,true);
 $data[] = $json["temp1"];
 $data[] = $json["temp2"];
