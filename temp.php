@@ -11,7 +11,7 @@ $data[] = $json["temp1"]/100;
 $data[] = $json["temp2"]/100;
 $myFile = "temp-data";
 $fh = fopen($myFile, 'a') or die("can't open file");
-$stringData = '["'.$time.'",'.$json["temp1"].','.$json["temp2"].'],'."\n";
+$stringData = '["'.$time.'",'.($json["temp1"]/100).','.($json["temp2"]/100).'],'."\n";
 fwrite($fh, $stringData);
 fclose($fh);
 
