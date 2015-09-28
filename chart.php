@@ -32,7 +32,7 @@ chart.getImageURI() + '">Printable version</a>';
 	  
 	  function requestNewData() {
 		$.ajax({
-		  url: "temp",
+		  url: "temp.php",
 		}).done(function(e) {
 		  addData(eval(e));
 		  setTimeout(requestNewData, refreshTimer*1000);
@@ -58,7 +58,7 @@ chart.getImageURI() + '">Printable version</a>';
     </script>
   </head>
   <body>
-  <h2><font style="color:#3366cc">hinten: <div id="temp_1" style="float:left"></div>&deg;</font> - <font style="color:#dc3912">vorne: <div id="temp_2" style="float:left"></div>&deg;</font></h2>
+  <h2><font style="color:#3366cc">hinten: <div id="temp_1" style="display:inline"></div>&deg;</font> - <font style="color:#dc3912">vorne: <div id="temp_2" style="display:inline"></div>&deg;</font></h2>
     <div id="chart_div" style="width: 100%; height: 500px;"></div>
   <div id='png'></div><br>
   <a href="clear_data.php" onclick="return alert('Sicher?')">Daten l&ouml;schen</a><br>
